@@ -70,7 +70,7 @@ body, html {
   width: 100%;
   height: 100%;
   background-color: #800040;
-  opacity: 0;
+  opacity: .88;
   z-index: 3;
 }
 
@@ -220,44 +220,50 @@ img#land {
 
 .make-bright {
   animation-name: fade;
-  animation-duration: 20s;
+  animation-duration: 14s;
   animation-direction: reverse;
   animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 .darken {
   animation-name: darken;
-  animation-duration: 20s;
+  animation-duration: 14s;
   animation-direction: reverse;
   animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 .night-time {
   animation-name: sky-change;
-  animation-duration: 20s;
+  animation-duration: 14s;
   animation-direction: forwards;
   animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 /* ===== Day ===== */
 
 .fade {
   animation-name: fade;
-  animation-duration: 20s;
+  animation-duration: 14s;
   animation-direction: forwards;
   animation-fill-mode: backwards;
+  animation-iteration-count: 1;
 }
 
 .lighten {
   animation-name: darken;
-  animation-duration: 20s;
+  animation-duration: 14s;
   animation-direction: forwards;
   animation-fill-mode: backwards;
+  animation-iteration-count: 1;
 }
 
 .day-time {
   animation-name: sky-change;
-  animation-duration: 20s;
+  animation-duration: 14s;
   animation-direction: reverse;
   animation-fill-mode: backwards;
+  animation-iteration-count: 1;
 }
