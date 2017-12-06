@@ -1,5 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300');
 
+/* ===== Animations ===== */
+
+@keyframes sky-change {
+  0% {background-color: #ccccff}
+  50% {background-color: #00004d}
+  100% {background-color: #000000}
+}
+
+@keyframes orbit {
+  0% {transform: translate(0px, 0px);}
+  100% {transform: translate(424px, -276px);}
+}
+
+@keyframes fade {
+  0% {opacity: 1}
+  50% {opacity: .5}
+  100% {opacity: 0}
+}
+
+@keyframes darken {
+  0% {opacity: .9}
+  30% {opacity: .9}
+  50% {opacity: .8}
+  75% {opacity: .5}
+  100% {opacity: 0}
+}
+
 /* ===== General ===== */
 
 * {
@@ -12,7 +39,7 @@ body, html {
   height: 100%;
 }
 
-#sky {
+.sky {
   width: 100%;
   height: 100%;
   background-color: #ccccff;
@@ -43,7 +70,7 @@ body, html {
   width: 100%;
   height: 100%;
   background-color: #800040;
-  opacity: .8;
+  opacity: 0;
   z-index: 3;
 }
 
@@ -155,32 +182,82 @@ img {
   bottom: 90px;
 }
 
-#stars {
+img.stars {
   width: 100%;
   height: 100%;
   opacity: 0;
   z-index: 0;
 }
 
-#moon {
+img#moon {
   position: absolute;
   left: 35px;
   bottom: 46%;
   width: 6%;
-}
-
-#sun {
-  position: absolute;
-  bottom: 43%;
-}
-
-#land {
-  width: 100%;
+  transform: translate(424px, -276px);
   z-index: 1;
 }
 
-#land-overlay {
+img#sun {
+  position: absolute;
+  bottom: 43%;
+  transform: translate(424px, -276px);
+  z-index: 1;
+}
+
+img#land {
+  width: 100%;
+  z-index: 2;
+}
+
+.land-overlay {
   width: 100%;
   opacity: 0;
-  z-index: 2;
+  z-index: 3;
+}
+
+/* ===== Night ===== */
+
+.make-bright {
+  animation-name: fade;
+  animation-duration: 20s;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+.darken {
+  animation-name: darken;
+  animation-duration: 20s;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+}
+
+.night-time {
+  animation-name: sky-change;
+  animation-duration: 20s;
+  animation-direction: forwards;
+  animation-fill-mode: forwards;
+}
+
+/* ===== Day ===== */
+
+.fade {
+  animation-name: fade;
+  animation-duration: 20s;
+  animation-direction: forwards;
+  animation-fill-mode: backwards;
+}
+
+.lighten {
+  animation-name: darken;
+  animation-duration: 20s;
+  animation-direction: forwards;
+  animation-fill-mode: backwards;
+}
+
+.day-time {
+  animation-name: sky-change;
+  animation-duration: 20s;
+  animation-direction: reverse;
+  animation-fill-mode: backwards;
 }
